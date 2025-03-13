@@ -40,13 +40,17 @@ The following keybindings are configured by default:
   - `$mod+Shift+p`: Check Pomodoro timer status
 
 - **Translator** (if available):
-  - `$mod+t`: Translate selected text
+  - `$mod+Shift+t`: Translate selected text
 
-- **Mathpix OCR** (if available):
-  - `$mod+m`: Capture screenshot and perform OCR
+- **Screenshot and OCR**:
+  - `Print`: Take a screenshot with slurp and open in swappy
+  - `Print+Alt`: Capture screenshot and perform OCR with Mathpix
 
 - **Readwise** (if available):
-  - `$mod+r`: Save URL from clipboard to Readwise
+  - `$mod+Shift+r`: Save URL from clipboard to Readwise
+
+- **AI**:
+  - `Scroll_Lock`: Open Grok AI in LibreWolf browser
 
 You can customize these keybindings by editing the `sway_sh_config` file.
 
