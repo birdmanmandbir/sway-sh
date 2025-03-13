@@ -1,0 +1,8 @@
+# Temporary files
+*.tmp
+
+# Logs
+*.log
+
+# Temporary state files
+/tmp/* 
