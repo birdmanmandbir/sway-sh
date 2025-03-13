@@ -1,0 +1,22 @@
+# Sway-sh scripts configuration
+
+# Hardcoded path to the scripts directory
+# Change this if you move the repository to a different location
+SCRIPT_DIR="$HOME/code/sway-sh"
+
+# Pomodoro timer keybindings
+bindsym $mod+p exec $SCRIPT_DIR/pomodoro-sh/pomodoro.sh
+bindsym $mod+Shift+p exec $SCRIPT_DIR/pomodoro-sh/pomodoro.sh status
+
+# Translator keybindings (if available)
+bindsym $mod+Shift+t exec $SCRIPT_DIR/translator-sh/translate.sh
+
+# Mathpix OCR keybindings (if available)
+bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym Print+Alt exec $SCRIPT_DIR/mathpix-sh/mathpix_screenshot_ocr.sh
+
+# Readwise keybindings (if available)
+bindsym $mod+shift+r exec $SCRIPT_DIR/readwise-sh/readwise-save.sh
+
+## AI
+bindsym Scroll_Lock exec librewolf https://x.com/i/grok?focus=1
