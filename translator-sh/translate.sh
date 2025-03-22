@@ -28,7 +28,7 @@ if [ -z "$TEXT" ]; then
   # Check if clipboard is also empty
   if [ -z "$TEXT" ]; then
     echo "Clipboard is empty"
-    notify-send "Translation" "No text selected and clipboard is empty"
+    notify-send "Translation 🔍" "No text selected and clipboard is empty"
     exit 1
   fi
 fi
@@ -60,7 +60,7 @@ echo -e "\nTranslated: $TRANSLATED"
 echo "$TRANSLATED" | wl-copy
 
 # Show notification
-notify-send "Translation Success" "$TRANSLATED"
+notify-send "Translation Success 🌍" "$TRANSLATED"
 
 # Simulate Ctrl+V to paste the translation
 # First, we need to make sure we're in the right window

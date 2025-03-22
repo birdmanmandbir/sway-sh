@@ -31,18 +31,18 @@ show_status() {
         if [[ $state == work:* ]]; then
             time=${state#work:}
             echo "Pomodoro: Working - $time remaining"
-            notify-send "Pomodoro Status" "Working - $time remaining" --icon=time
+            notify-send "Pomodoro Status 🍅" "Working - $time remaining" --icon=time
         elif [[ $state == break:* ]]; then
             time=${state#break:}
             echo "Pomodoro: Break - $time remaining"
-            notify-send "Pomodoro Status" "Break - $time remaining" --icon=time
+            notify-send "Pomodoro Status ☕" "Break - $time remaining" --icon=time
         else
             echo "Pomodoro: Running"
-            notify-send "Pomodoro Status" "Timer is running" --icon=time
+            notify-send "Pomodoro Status ⏱️" "Timer is running" --icon=time
         fi
     else
         echo "No active Pomodoro timer"
-        notify-send "Pomodoro Status" "No active timer" --icon=dialog-information
+        notify-send "Pomodoro Status ℹ️" "No active timer" --icon=dialog-information
     fi
 }
 
@@ -57,7 +57,7 @@ start_pomodoro() {
         remaining_break_seconds=$((BREAK_MINUTES * 60))
         
         # Notify user that Pomodoro has started
-        notify-send "Pomodoro Timer" "Work period started (${WORK_MINUTES} minutes)" --icon=time
+        notify-send "Pomodoro Timer 🍅" "Work period started (${WORK_MINUTES} minutes)" --icon=time
         
         # Work period
         while [ $remaining_work_seconds -gt 0 ]; do
@@ -72,7 +72,7 @@ start_pomodoro() {
         done
         
         # Work period finished, notify user
-        notify-send "Pomodoro Timer" "Work period finished! Take a break (${BREAK_MINUTES} minutes)" --icon=dialog-information
+        notify-send "Pomodoro Timer 🎉" "Work period finished! Take a break (${BREAK_MINUTES} minutes)" --icon=dialog-information
         
         # Break period
         while [ $remaining_break_seconds -gt 0 ]; do
@@ -87,7 +87,7 @@ start_pomodoro() {
         done
         
         # Break period finished, notify user
-        notify-send "Pomodoro Timer" "Break finished! Ready for next Pomodoro?" --icon=dialog-information
+        notify-send "Pomodoro Timer ⏰" "Break finished! Ready for next Pomodoro?" --icon=dialog-information
         
         # Clean up
         rm -f "$POMODORO_STATE_FILE"
@@ -98,7 +98,7 @@ start_pomodoro() {
     echo $! > "$POMODORO_PID_FILE"
     
     echo "Pomodoro timer started"
-    notify-send "Pomodoro Timer" "Timer started" --icon=time
+    notify-send "Pomodoro Timer ▶️" "Timer started" --icon=time
 }
 
 # Function to stop the Pomodoro timer
@@ -114,10 +114,10 @@ stop_pomodoro() {
         rm -f "$POMODORO_PID_FILE"
         
         echo "Pomodoro timer stopped"
-        notify-send "Pomodoro Timer" "Timer stopped" --icon=process-stop
+        notify-send "Pomodoro Timer ⏹️" "Timer stopped" --icon=process-stop
     else
         echo "No active Pomodoro timer found"
-        notify-send "Pomodoro Timer" "No active timer found" --icon=dialog-information
+        notify-send "Pomodoro Timer ℹ️" "No active timer found" --icon=dialog-information
     fi
 }
 
